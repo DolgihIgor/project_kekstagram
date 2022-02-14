@@ -87,7 +87,7 @@ buttonMinus.addEventListener('click', () => {
 const uploadForm = document.querySelector('.img-upload__form');
 
 const onSuccess = () => {
-  showSuccess('Ура!')
+  showSuccess('Изображение успешно загружено!')
   closeModal();
 }
 
