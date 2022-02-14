@@ -1,5 +1,6 @@
 import { checkEsc } from './util.js';
 
+// Колиество загружаемых комментариев
 const COMMENTS_LOAD_STEP = 5;
 
 const bigPicture = document.querySelector('.big-picture');
