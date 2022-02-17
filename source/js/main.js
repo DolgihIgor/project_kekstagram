@@ -13,7 +13,7 @@ const RANDOM_PREVIEW_LOAD = 10;
 const filter = document.querySelector('.img-filters');
 let photos = [];
 
-function removeActiveClass() {
+const removeActiveClass = () => {
   let activeFilter = document.querySelector('.img-filters__button--active');
   activeFilter.classList.remove('img-filters__button--active');
 }
@@ -62,5 +62,18 @@ const onFilterClick = debounce((evt) => {
     filters[evt.target.id]()
   }
 })
+
+const likesCount = document.querySelector('.likes-count');
+likesCount.addEventListener('click', ()=>{
+    const likes = likesCount.textContent;
+    if (likesCount.classList.contains('likes-count-up')) {
+      likesCount.textContent = parseInt(likes) - 1;
+      likesCount.classList.add('likes-count-up');
+    } else {
+      likesCount.textContent = parseInt(likes) + 1;
+      likesCount.classList.remove('likes-count-up');
+    }
+
+});
 
 filter.addEventListener('click', onFilterClick)
